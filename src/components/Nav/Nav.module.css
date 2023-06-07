@@ -1,0 +1,22 @@
+.NavLink{
+    margin-right: 2%;
+    margin-left: 2%;
+}
+
+.NavLink button{
+    margin-top: 1%;
+    padding: 10px 20px;
+    background-color: rgba(71, 192, 125 , 0.8);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.NavLink button:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.05);
+}

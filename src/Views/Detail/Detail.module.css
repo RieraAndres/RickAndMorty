@@ -1,0 +1,53 @@
+.DetailCard{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 3px solid #000000; 
+    padding: 5px; 
+    border-radius: 20px;
+    max-width: 50%;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    background-color: rgba(255, 255, 255,0.5);
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1%;
+    }
+
+
+
+.DetailCard img{
+    border-radius: 100%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.DetailCard p{
+    font-size: 25px;
+}
+
+.DetailCard h2{
+    font-size: 28px;
+    margin-top: 20%;
+}
+
+.DetailCard button{
+        display: flex;
+        align-items: start;
+        margin-top: 1%;
+        margin-left: 3%;
+        padding: 10px 20px;
+        background-color: rgba(71, 192, 125 , 0.8);
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border-radius: 10%;
+        transition: transform 0.3s ease-in-out;
+        text-decoration: none;
+}
+
+.DetailCard button:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.05);
+}
+
