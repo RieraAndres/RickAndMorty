@@ -55,15 +55,12 @@
     border-radius: 25px;
 }
 
-.warning {
-  border: solid red 1px;
-  border-radius: 0.2em;
-}
+
 
 .label {
   font-size: 15px;
   color: red;
-  margin-left: 10em;
+  
 }
 
 .Form h1{

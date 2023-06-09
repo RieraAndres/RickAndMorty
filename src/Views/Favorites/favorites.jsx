@@ -1,24 +1,31 @@
 import {connect} from 'react-redux'
 import Cards from '../../components/Cards/Cards'
 import { NavLink } from 'react-router-dom';
-import { filterCards,orderCards } from '../../Redux/actions';
+import { filterCards,orderCards,filterReset } from '../../Redux/actions';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import styles from './favorite.module.css'
 
 function Favorites({myFavorites}){
+    console.log(myFavorites)
     const dispatch = useDispatch();
     
     const [aux , setAux] = useState(false)
+
     const handleOrder = (e)=>{
         dispatch(orderCards(e.target.value));
-        setAux(true);
+        setAux(true)
     }
 
     const handleFilter = (e)=>{
         dispatch(filterCards(e.target.value))
     }
+
+    const handleReset = (e)=>{
+        dispatch(filterReset(e.target.value))
+    }
     return(
-        <div>
+        <div className={styles.container}>
             <h1>TUS FAVORITOS</h1>
             <select onChange={handleOrder}>
                 <option value='Ascendente'>Ascendente</option>
@@ -30,13 +37,15 @@ function Favorites({myFavorites}){
                 <option value='Genderless'>Genderless</option>
                 <option value='unknown'>Unknown</option>
             </select>
-            <NavLink to={'/home'}><button>Back</button></NavLink>
+            <button value='Reset' onClick={handleReset}>Reset filters</button>
+            <NavLink to={'/home'}><button>Back Home</button></NavLink>
             <Cards characters={myFavorites}/>
         </div>
     );
 }
 
 const mapStateToProps = (state) => {
+
     return {myFavorites: state.myFavorites}
 }
 

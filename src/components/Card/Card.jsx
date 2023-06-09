@@ -31,19 +31,22 @@ function Card(props) {
   }
 
   const handleOnClose = () => {
-      onClose(character.id);
+    onClose(character.id);
+    if (isFav) {
+      removeFavorite(character.id);
     }
+  }
   
   
   return (
     <div className={styles.divCard} >
       {isFav ? (
-  <button onClick={() => handleFavorite(character.id)}>❤️</button>
+  <button className={styles.corazon} onClick={() => handleFavorite(character.id)}>❤️</button>
 ) : (
-  <button onClick={() => handleFavorite(character)}>🤍</button>
+  <button className={styles.corazon}onClick={() => handleFavorite(character)}>🤍</button>
 )}    
       {window.location.pathname === '/home' &&  
-      <button className = {styles.Xbutton} onClick={handleOnClose}>X</button> }
+      <button className = {styles.Xbutton} onClick={handleOnClose} >✖</button> }
       <img src={character.image} alt="" />
       <h2>{character.name}</h2>
       <Link  to={`/detail/${character.id}`} ><button className={styles.DetailButton}>Detalles</button></Link>

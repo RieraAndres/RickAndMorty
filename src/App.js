@@ -62,7 +62,7 @@ useEffect(() => {
           <div> 
             <Nav onSearch={onSearch}></Nav>
             <Cards characters={characters} onClose={onClose} />
-            </div>}
+          </div>}
         />
         <Route path='/favorites' element={<Favorites/>} />
         <Route path='/about' element={<About />} />
